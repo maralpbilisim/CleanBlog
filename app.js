@@ -39,8 +39,8 @@ app.get('/add_post', (req, res) => {
   res.render('add_post');
 });
 
-app.post('/photos', async (req, res) => { // async - await yapısı kullanacğız.
-  await Photo.create(req.body)// body bilgisini Photo modeli sayesinde veritabanında dökümana dönüştürüyoruz.
+app.post('/photos', async (req, res) => {
+  await Photo.create(req.body)
   res.redirect('/')
 });
 
