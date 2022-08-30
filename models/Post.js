@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 //create schema
 
-const PhotoSchema = new Schema({
+const PostSchema = new Schema({
   title: String,
   detail: String,
   image: String,
@@ -13,6 +13,6 @@ const PhotoSchema = new Schema({
   },
 });
 
-const Photo = mongoose.model('Photo', PhotoSchema);
+const Post = mongoose.model('Post', PostSchema);
 
-module.exports=Photo;
+module.exports=Post;
