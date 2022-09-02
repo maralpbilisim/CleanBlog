@@ -10,10 +10,14 @@ const methodOverride = require('method-override');
 
 //connect DB
 
-mongoose.connect('mongodb://localhost/clean-test-db', {
+mongoose.connect('mongodb+srv://maralp:QL5qzV69C4vDiwcR@clean-blog.nahwczt.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+}).then(() =>{
+  console.log('Db connected')
+}).catch((err)=>{
+console.log(err)
+})
 
 
 //VİEW ENGİNE
@@ -44,7 +48,7 @@ app.get('/addNewPost',pageController.getAddPage );
 
 
 
- const port = 3000;
+ const port = process.env.PORT || 5000;
  app.listen(port, () => {
    console.log(`Server ${port} portunda dinleniyor`);
  });
