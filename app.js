@@ -10,7 +10,7 @@ const methodOverride = require('method-override');
 
 //connect DB
 
-mongoose.connect('mongodb+srv://maralp:QL5qzV69C4vDiwcR@clean-blog.nahwczt.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${process.env.USER_ID}:${process.env.USER_KEY}@clean-blog.nahwczt.mongodb.net/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() =>{
